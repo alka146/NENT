@@ -97,5 +97,7 @@ class Create:
         t.add_output(out_igw)
         t.add_output(out_vpc)
 
-        print(t.to_json())
+        #print(t.to_json())
+
+        return t
         

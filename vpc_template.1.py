@@ -1,10 +1,12 @@
 #!/usr/bin/python
+import sys
 from user_input import Input
 from create_template import Create
 
 input = Input()
-env = input.ReadEnv()
-cidr = input.ReadCIDR()
+env = input.ReadEnvFromUser()
+cidr = input.ReadCIDRFromUser()
 
 create = Create()
-create.CreateTemplate(env, cidr)
+cfn = create.CreateTemplate(env, cidr)
+print (cfn.to_json())
